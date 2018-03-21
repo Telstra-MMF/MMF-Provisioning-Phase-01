@@ -7,6 +7,16 @@ provider "opc" {
    endpoint            = "${var.apiEndpoint}"
 }
 
+### STORAGE ###
+###############
+resource "opc_compute_storage_volume" "app-volume1" {
+	name                = "app-volume1-boot"
+	size                = "30"
+	storage_type        = "/oracle/public/storage/latency"
+	bootable            = true
+	image_list          = "/oracle/public/OL_6.8_UEKR4_x86_64"
+}
+
 ### COMPUTE ###
 ###############
 resource "opc_compute_instance" "lxapp14001" {
