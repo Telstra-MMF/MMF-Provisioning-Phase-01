@@ -40,6 +40,22 @@ resource "opc_compute_vnic_set" "cla-npintocm-woci-mmf001-vnic002" {
   tags         = ["cla-npintocm-nonprod"]
 }
 
+### IP Network : ACL ###
+resource "opc_compute_acl" "cla-npintocm-woci-mmf001-acl001" {
+  name        = "cla-npintocm-woci-mmf001-acl001"
+  enabled	  = true
+  description = "External ACL for cla-npintocm-woci-mmf001 IP Network"
+  tags        = [ "cla-npintocm-nonprod" ]
+}
+
+resource "opc_compute_acl" "cla-npintocm-woci-mmf001-acl002" {
+  name        = "cla-npintocm-woci-mmf001-acl002"
+  enabled	  = true
+  description = "Internal ACL for cla-npintocm-woci-mmf001 IP Network"
+  tags        = [ "cla-npintocm-nonprod" ]
+}
+	
+
 ### STORAGE ###
 ###############
 resource "opc_compute_storage_volume" "storage-1" {
