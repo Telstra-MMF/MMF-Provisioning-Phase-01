@@ -25,10 +25,15 @@ resource "opc_compute_ip_network" "cla-npintocm-wloc-mmf001" {
 
 ### STORAGE ###
 ###############
-resource "opc_compute_storage_volume" "app-volume1" {
+resource "opc_compute_storage_volume" "storage-1" {
 	name                = "app-volume1-boot"
 	size                = "30"
-	storage_type        = "/oracle/public/storage/latency"
+	image_list          = "/oracle/public/OL_6.8_UEKR4_x86_64"
+}
+
+resource "opc_compute_storage_volume" "storage-1+1" {
+	name                = "app-volume1-boot"
+	size                = "30"
 	bootable            = true
 	image_list          = "/oracle/public/OL_6.8_UEKR4_x86_64"
 }
@@ -41,7 +46,7 @@ resource "opc_compute_instance" "lxapp14001" {
 	shape               = "OC3M"
 	storage {
 		index 			= 1
-		volume          = "${opc_compute_storage_volume.app-volume1.name}"
+		volume          = "${opc_compute_storage_volume.storage-1.name}"
 	}
 	
 #	ssh_keys            = ["${opc_compute_ssh_key.ocsk-public-key1.name}"]
