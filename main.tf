@@ -26,13 +26,13 @@ resource "opc_compute_ip_network" "cla-npintocm-wloc-mmf001" {
 ### STORAGE ###
 ###############
 resource "opc_compute_storage_volume" "storage-1" {
-	name                = "app-volume1-boot"
+	name                = "storage-1"
 	size                = "30"
 	image_list          = "/oracle/public/OL_6.8_UEKR4_x86_64"
 }
 
 resource "opc_compute_storage_volume" "storage-1-Additional" {
-	name                = "app-volume1-boot"
+	name                = "storage-1-Additional"
 	size                = "30"
 	bootable            = true
 	image_list          = "/oracle/public/OL_6.8_UEKR4_x86_64"
@@ -43,7 +43,7 @@ resource "opc_compute_storage_volume" "storage-1-Additional" {
 resource "opc_compute_instance" "lxapp14001" {
 	name                = "lxapp14001"
 	label               = "CAT RMS app server (+additional 300GB storage)"
-	shape               = "OC3M"
+	shape               = "OC3"
 	storage {
 		index 			= 1
 		volume          = "${opc_compute_storage_volume.storage-1.name}"
