@@ -14,6 +14,15 @@ resource "opc_compute_ip_network_exchange" "cla-npintocm-ipx001" {
 	tags 				= [ "cla-npintocm-nonprod" ]
 }
 
+### IP Network : IP Networks ###
+resource "opc_compute_ip_network" "cla-npintocm-wloc-mmf001" {
+  name                = "cla-npintocm-wloc-mmf001"
+  description         = "cla-npintocm-wloc-mmf001"
+  ip_address_prefix   = "10.13.32.0/23"
+  ip_network_exchange = "${opc_compute_ip_exchange.cla-npintocm-ipx001.name}"
+  public_napt_enabled = false
+}
+
 ### STORAGE ###
 ###############
 resource "opc_compute_storage_volume" "app-volume1" {
