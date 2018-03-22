@@ -23,6 +23,39 @@ resource "opc_compute_ip_network" "cla-npintocm-wloc-mmf001" {
   public_napt_enabled = false
 }
 
+### IP Network : vNIC Sets ###
+resource "opc_compute_vnic_set" "cla-npintocm-woci-mmf001-vnic001" {
+  name         = "cla-npintocm-woci-mmf001-vnic001"
+  description  = "External vNICset for cla-npintocm-wloc-mmf001 IP Network"
+  applied_acls = ["cla-npintocm-woci-mmf001-acl001"]
+  virtual_nics = ["vnic001"]
+  tags         = ["cla-npintocm-nonprod"]
+}
+
+resource "opc_compute_vnic_set" "cla-npintocm-woci-mmf001-vnic002" {
+  name         = "cla-npintocm-woci-mmf001-vnic002"
+  description  = "Internal vNICset for cla-npintocm-wloc-mmf001 IP Network"
+  applied_acls = ["cla-npintocm-woci-mmf001-acl002"]
+  virtual_nics = ["vnic001"]
+  tags         = ["cla-npintocm-nonprod"]
+}
+
+### IP Network : ACL ###
+resource "opc_compute_acl" "cla-npintocm-woci-mmf001-acl001" {
+  name        = "cla-npintocm-woci-mmf001-acl001"
+  enabled	  = true
+  description = "External ACL for cla-npintocm-woci-mmf001 IP Network"
+  tags        = [ "cla-npintocm-nonprod" ]
+}
+
+resource "opc_compute_acl" "cla-npintocm-woci-mmf001-acl002" {
+  name        = "cla-npintocm-woci-mmf001-acl002"
+  enabled	  = true
+  description = "Internal ACL for cla-npintocm-woci-mmf001 IP Network"
+  tags        = [ "cla-npintocm-nonprod" ]
+}
+	
+
 ### STORAGE ###
 ###############
 resource "opc_compute_storage_volume" "storage-1" {
