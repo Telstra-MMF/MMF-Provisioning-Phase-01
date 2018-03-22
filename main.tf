@@ -31,7 +31,7 @@ resource "opc_compute_storage_volume" "storage-1" {
 	image_list          = "/oracle/public/OL_6.8_UEKR4_x86_64"
 }
 
-resource "opc_compute_storage_volume" "storage-1+1" {
+resource "opc_compute_storage_volume" "storage-1-Additional" {
 	name                = "app-volume1-boot"
 	size                = "30"
 	bootable            = true
