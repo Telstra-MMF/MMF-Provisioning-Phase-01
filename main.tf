@@ -18,7 +18,7 @@ resource "opc_compute_ip_network_exchange" "cla-npintocm-ipx001" {
 resource "opc_compute_ip_network" "cla-npintocm-wloc-mmf001" {
   name                = "cla-npintocm-wloc-mmf001"
   description         = "cla-npintocm-wloc-mmf001"
-  ip_address_prefix   = "10.195.68.0/24 "
+  ip_address_prefix   = "10.195.68.0/24"
   ip_network_exchange = "${opc_compute_ip_network_exchange.cla-npintocm-ipx001.name}"
   public_napt_enabled = false
 }
