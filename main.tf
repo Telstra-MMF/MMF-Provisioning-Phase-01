@@ -19,7 +19,7 @@ resource "opc_compute_ip_network" "cla-npintocm-wloc-mmf001" {
   name                = "cla-npintocm-wloc-mmf001"
   description         = "cla-npintocm-wloc-mmf001"
   ip_address_prefix   = "10.13.32.0/23"
-  ip_network_exchange = "${opc_compute_ip_exchange.cla-npintocm-ipx001.name}"
+  ip_network_exchange = "${opc_compute_ip_network_exchange.cla-npintocm-ipx001.name}"
   public_napt_enabled = false
 }
 
@@ -41,7 +41,7 @@ resource "opc_compute_instance" "lxapp14001" {
 	shape               = "OC3M"
 	storage {
 		index 			= 1
-		volume          = "${opc_compute_storage_volume.storage-1.name}"
+		volume          = "${opc_compute_storage_volume.app-volume1.name}"
 	}
 	
 #	ssh_keys            = ["${opc_compute_ssh_key.ocsk-public-key1.name}"]
