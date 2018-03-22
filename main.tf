@@ -18,7 +18,7 @@ resource "opc_compute_ip_network_exchange" "cla-npintocm-ipx001" {
 resource "opc_compute_ip_network" "cla-npintocm-wloc-mmf001" {
   name                = "cla-npintocm-wloc-mmf001"
   description         = "cla-npintocm-wloc-mmf001"
-  ip_address_prefix   = "10.13.32.0/23"
+  ip_address_prefix   = "10.195.77.0/24"
   ip_network_exchange = "${opc_compute_ip_network_exchange.cla-npintocm-ipx001.name}"
   public_napt_enabled = false
 }
@@ -43,7 +43,7 @@ resource "opc_compute_storage_volume" "storage-1-Additional" {
 resource "opc_compute_instance" "lxapp14001" {
 	name                = "lxapp14001"
 	label               = "CAT RMS app server (+additional 300GB storage)"
-	shape               = "OC3"
+	shape               = "oc3"
 	storage {
 		index 			= 1
 		volume          = "${opc_compute_storage_volume.storage-1.name}"
