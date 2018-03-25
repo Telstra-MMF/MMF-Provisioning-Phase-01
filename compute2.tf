@@ -15,7 +15,7 @@ resource "opc_compute_instance" "lxapp14002" {
 		vnic              = "vnic001"
 		ip_network        = "cla-npintocm-wloc-mmf001"
 		ip_address        = "10.195.77.12"
-		dns               = ["lxapp14001.ocmint.corp.telstra.com"]
+		dns               = ["lxapp14002.ocmint.corp.telstra.com"]
 	}
 	
 #	ssh_keys            = ["${opc_compute_ssh_key.ocsk-public-key1.name}"]
