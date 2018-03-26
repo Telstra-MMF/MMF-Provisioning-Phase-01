@@ -26,7 +26,8 @@ resource "opc_compute_instance" "lxapp14001" {
 	networking_info {
 		index             = 0
 		shared_network    = false
-		vnic              = "vnic001"
+#		vnic              = ""
+		vnic_sets		  = "cla-npintocm-wloc-mmf001-vnic001","cla-npintocm-wloc-mmf001-vnic002"
 		ip_network        = "cla-npintocm-wloc-mmf001"
 		ip_address        = "10.195.77.11"
 		dns               = ["lxapp14001.ocmint.corp.telstra.com"]
@@ -48,7 +49,7 @@ resource "opc_compute_instance" "lxapp14002" {
 	networking_info {
 		index             = 0
 		shared_network    = false
-		vnic              = "vnic002"
+#		vnic              = "vnic002"
 		ip_network        = "cla-npintocm-wloc-mmf001"
 		ip_address        = "10.195.77.12"
 		dns               = ["lxapp14002.ocmint.corp.telstra.com"]
