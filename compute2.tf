@@ -6,7 +6,7 @@ resource "opc_compute_instance" "lxapp14002" {
 	shape               = "oc3"
 	storage {
 		index 			= 1
-		volume          = "${opc_compute_storage_volume.storage-1.name}"
+		volume          = "${opc_compute_storage_volume.storage-1-Additional.name}"
 	}
 	
 	networking_info {
