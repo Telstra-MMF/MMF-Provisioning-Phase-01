@@ -28,7 +28,6 @@ resource "opc_compute_vnic_set" "cla-npintocm-wloc-mmf001-vnic001" {
   name         = "cla-npintocm-wloc-mmf001-vnic001"
   description  = "External vNICset for cla-npintocm-wloc-mmf001 IP Network"
   applied_acls = ["cla-npintocm-wloc-mmf001-acl001"]
-#  virtual_nics = ["vnic001"]
   tags         = ["cla-npintocm-nonprod"]
 }
 
@@ -36,7 +35,6 @@ resource "opc_compute_vnic_set" "cla-npintocm-wloc-mmf001-vnic002" {
   name         = "cla-npintocm-wloc-mmf001-vnic002"
   description  = "Internal vNICset for cla-npintocm-wloc-mmf001 IP Network"
   applied_acls = ["cla-npintocm-wloc-mmf001-acl002"]
-#  virtual_nics = ["vnic002"]
   tags         = ["cla-npintocm-nonprod"]
 }
 
