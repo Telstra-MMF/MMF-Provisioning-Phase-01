@@ -35,7 +35,7 @@ resource "opc_compute_vnic_set" "cla-npintocm-wloc-mmf001-vnic001" {
 resource "opc_compute_vnic_set" "cla-npintocm-wloc-mmf001-vnic002" {
   name         = "cla-npintocm-wloc-mmf001-vnic002"
   description  = "Internal vNICset for cla-npintocm-wloc-mmf001 IP Network"
-  virtual_nics = ["lxapp14001"]
+#  virtual_nics = ["lxapp14001"]
   applied_acls = ["cla-npintocm-wloc-mmf001-acl002"]
   tags         = ["cla-npintocm-nonprod"]
 }

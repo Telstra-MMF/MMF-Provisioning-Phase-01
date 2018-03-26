@@ -26,8 +26,8 @@ resource "opc_compute_instance" "lxapp14001" {
 	networking_info {
 		index             = 0
 		shared_network    = false
-#		vnic_sets		  = ["cla-npintocm-wloc-mmf001-vnic001", "cla-npintocm-wloc-mmf001-vnic002"]
-		vnic			  = "lxapp14001"
+		vnic_sets		  = ["cla-npintocm-wloc-mmf001-vnic001", "cla-npintocm-wloc-mmf001-vnic002"]
+#		vnic			  = "lxapp14001"
 		ip_network        = "cla-npintocm-wloc-mmf001"
 		ip_address        = "10.195.77.11"
 		dns               = ["lxapp14001.ocmint.corp.telstra.com"]
