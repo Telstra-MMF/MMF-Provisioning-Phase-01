@@ -7,6 +7,8 @@ provider "opc" {
    endpoint            = "${var.apiEndpoint}"
 }
 
+$ terraform import opc_compute_storage_volume.storage-1
+
 ### COMPUTE ###
 ###############
 resource "opc_compute_instance" "lxapp14001" {
