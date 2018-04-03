@@ -1,6 +1,7 @@
 ### STORAGE ###
 ###############
 resource "opc_compute_storage_volume" "storage-1" {
+	prevent_destroy		= true
 	name                = "storage-1"
 	size                = "30"
 	bootable 			= true
